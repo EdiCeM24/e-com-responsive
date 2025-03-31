@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Edi_Mars Responsive Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.1/dist/boxicons.js" integrity="sha512-YYqDo9RDiFmWWI2HdJ+DX7TMh3DWkbAmiXR9R9vAoKXX983Yl1mTfZ3eY9BdajtaCA3lAtgNhwSwkagWV32enQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.1/css/boxicons.min.css" integrity="sha512-QFPgv160B7hqiaf+HdW6HkJZ53DHQOlpraV98UdNAqU7h30lWu/bYwg/rTceL/l5P1U18IcQKkyAmtUX872qHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.min.js" integrity="sha512-y8/3lysXD6CUJkBj4RZM7o9U0t35voPBOSRHLvlUZ2zmU+NLQhezEpe/pMeFxfpRJY7RmlTv67DYhphyiyxBRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+     <div class="navbar">
+       <a href="#" class="logo">
+          <img src="" alt="">
+          Edi_Mars
+       </a>
+       <div class="menu">
+         <button class="menu-user"><i class='bx bx-user' style='color:#000' ></i></button>
+         <button class="menu-cart"><i class='bx bx-cart'></i><span class="cart-count">0</span></button>
+       </div>
+     </div>
+     
+
+     <!-- container -->
+      <div class="container">
+        <!-- main -->
+         <div class="main">
+           <!-- INSIDE THIS WILL BE PRODUCT PARTS -->
+            <div class='product-wrapper'>
+              <div class="product" data-product="1">
+                <img class="product-img" src="images/headphone.png" alt="">
+                <h3 class="product-title">Red Headphone</h3>
+                <p class="product-price">$45:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="2">
+                <img class="product-img" src="images/headphone-2.png" alt="">
+                <h3 class="product-title">Black Headphone</h3>
+                <p class="product-price">$43:22</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="3">
+                <img class="product-img" src="images/headphone-3.png" alt="">
+                <h3 class="product-title">Dark Headphone</h3>
+                <p class="product-price">$48:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="4">
+                <img class="product-img" src="images/phone-2.png" alt="">
+                <h3 class="product-title">Android phone</h3>
+                <p class="product-price">$157:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="5">
+                <img class="product-img" src="images/phone.jpg" alt="">
+                <h3 class="product-title">Iphone Pro Max Phone</h3>
+                <p class="product-price">$250:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="6">
+                <img class="product-img" src="images/phone-3.jpg" alt="">
+                <h3 class="product-title">Redmi Phone</h3>
+                <p class="product-price">$220:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="7">
+                <img class="product-img" src="images/phone-4.jpg" alt="">
+                <h3 class="product-title">Android Techno Phone</h3>
+                <p class="product-price">$145:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+              <div class="product" data-product="8">
+                <img class="product-img" src="images/phone-5.jpg" alt="">
+                <h3 class="product-title">Galaxy Samsung phone</h3>
+                <p class="product-price">$245:00</p>
+                <p class="add-to-cart">Add to cart</p>
+              </div>
+            </div>
+         </div>
+        <!-- cart -->
+         <div class="cart">
+           <h3 class="cart-title">Shopping Cart</h3>
+           <div class="cart-list">
+             
+           </div>
+           <hr class="divider">
+           <div class="cart-action">
+             <div class="cart-amount" id="total-price">
+               <span>Subtotal</span>
+               <span class="cart-amount-value">$0.00</span>
+             </div>
+             <div class="cart-amount" id="tax">
+               <span>Tax included (10%)</span>
+               <span class="cart-amount-value">$0.00</span>
+             </div>
+             <div class="cart-amount" id="final-price">
+                <span>Total</span>
+                <span class="cart-amount-value">$0.00</span>
+             </div>
+             <button class="cart-btn">Checkout</button>
+           </div>
+         </div>
+
+      </div>
+    <script src="app.js"></script> 
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</html>
