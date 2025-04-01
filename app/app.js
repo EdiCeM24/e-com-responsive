@@ -57,20 +57,21 @@ $(document).ready(function() {
         } else {
             // iterate through the cart and display each item
             $.each(cart, function (index, item) { 
-                 const $cartItemsElement = $('<div class="cart-item"></div>');
-                 $cartItemsElement.html(`
+                 const $cartItemElement = $('<div class="cart-item"></div>');
+                 $cartItemElement.html(`
                     <img class="cart-item-img" src="${item.image}" alt="${item.name}"/>
                     <div class="cart-item-desc">
                        <div class="cart-item-title">${item.name}</div>
                        <div class="cart-item-quantity">
                          <button class="change-quantity" data-id="${item.id}" data-action="decrement">-</button>
+                         ${item.quantity}
                          <button class="change-quantity" data-id="${item.id}" data-action="increment">+</button>
                        </div>
                     </div>
                     <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
                     <button class="cart-item-remove" data-id="${item.id}" data-action="increment"><i class='bx bx-trash'></i></button>
                  `)
-                 $cartItemsElement.append($cartItemsElement);
+                 $cartItemsElement.append($cartItemElement);
             });
         }
         // update the order summary.
@@ -88,14 +89,50 @@ $(document).ready(function() {
         $('#final-price .cart-amount-value').text(`$${total.toFixed(2)}`);
 
     }
-});
 
-$(document).ready(function() {
     $('.add-to-cart').on('click', function() {
         const productElement = $(this).closest('.product');
-        addToCart
-    })
+        addToCart(productElement);
+    });
+
+    // Event Listener for changing the Quantity of the cart item
+    $cartItemsElement.on('click', '.change-quantity', function() {
+        const itemId = $(this).data('id');
+        const action = $(this).data('action');
+        const item = cart.find(item => item.id === itemId);
+
+        if(action === 'increment') {
+            item.quantity += 1;
+        } else if(action === 'decrement' && item.quantity > 1) {
+            item.quantity -= 1;
+        }
+
+        // update cart count
+        updateCartCount();
+        // rerender cart items
+        renderCartItems();
+    });
+
+     // Event listener for removing the cart item
+     $cartItemsElement.on('click', '.cart-item-remove', function() {
+        const itemId = $(this).data('id');
+        cart = cart.filter(item => item.id !== itemId);
+        // update cart count
+        updateCartCount();
+        // rerender cart items
+        renderCartItems();
+    });
+
+    // Event listener for toggling the cart view
+    $menuCartElement.on('click', function() {
+        $cartElement.toggleClass('collapsed');
+        $mainElement.toggleClass('expanded', $cartElement.hasClass('collapsed'));
+    });
+
+    renderCartItems(); //initial render of cart items
+   
 });
+
 
 
 
@@ -111,3 +148,12 @@ dem.addEventListener('click', () => {
     dem.classList.add('fend');
 });
 
+
+
+
+// if(item.quantity === 0) {
+//     // remove item from cart if quantity is 0
+//     cart = cart.filter(item => item.id !== itemId);
+//     // update cart count
+//     updateCartCount();
+// }

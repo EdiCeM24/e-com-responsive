@@ -128,27 +128,95 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 120%;
-    max-width: 250px;
+    width: 160%;
+    max-width: 270px;
     height: calc(100% - 80px);
     position: fixed;
     top: 0;
     right: 8%;
+    z-index: 10;
     background-color: var(--color-blue);
     color: var(--color-white);
     border-radius: 8px;
     margin-top: 60px;
     padding: 1%;
+    margin-left: 20%;
 }
 .cart-title {
     letter-spacing: 1;
     line-height: 2;
 }
-/* cart-list later */
-
-
-
-
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0 2% 2% 0;
+    color: var(--color-font);
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 3%;
+    margin: 2% 0;
+    border-radius: 8px;
+    background-color: var(--color-grey);
+    width: 100%;
+    font-size: 13px;
+}
+.cart-item-img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+}
+.cart-item-title {
+    min-width: 10px;
+    max-width: 15ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+.change-quantity {
+    border: none;
+    background-color: var(--color-blue);
+    border-radius: 50px;
+    width: 20px;
+    cursor: pointer;
+}
+.cart-item-price {
+    font-weight: 700;
+}
+.cart-item-remove {
+    background-color: #0a0a0a;
+    border: none;
+    color: var(--color-grey);
+    cursor: pointer;
+}
+.cart-item-remove:hover {
+    color: #e3f116
+}
+.cart-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-font);
+}
+.cart-empty img {
+    width: 50%;
+    height: 50%;
+}
 .divider {
     border: none;
     height: 2px;
@@ -188,6 +256,12 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-
+.collapsed {
+    width: 0;
+    display: none;
+}
+.expanded {
+    margin-right: 0;
+}
 
 
